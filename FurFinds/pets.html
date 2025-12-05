@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets - FurFinds</title>
+    <link rel="stylesheet" href="pets_styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="FurFinds Logo">
+        <h2>FURFINDS</h2>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pets.html">Pets</a>
+        <a href="adoption_form.html">Adopt</a>
+
+        <!-- Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Help</button>
+            <div class="dropdown-content">
+                <a href="help.html#contact-section">Contact</a>
+                <a href="help.html#faq-section">FAQs</a>
+            </div>
+        </div>
+         <a href="index.html#AboutUs">About Us</a>
+    </nav>
+</header>
+
+<!-- Pets Section -->
+<section class="pets-section">
+    <div class="section-header">
+        <h1>Pets Ready for Adoption</h1>
+        <p>Find loving companions waiting for their forever homes. Browse through our available pets and discover dogs, cats, and other animals eager to join your family. Each one has a unique story, so open your heart and make a difference today.</p>
+    </div>
+
+    <!-- Cats Section -->
+    <div class="category-section">
+        <h2 class="category-header">Cats Ready for Adoption</h2>
+        <div class="pets-carousel-wrapper">
+            <button class="arrow-btn" onclick="scrollPets('cats', 'left')">‹</button>
+            <div class="pets-container" id="cats-container">
+
+                <!-- Cat 1 -->
+                <div class="pet-card">
+                    <img src="img/cat.png" alt="Albie" class="pet-image">
+                    <div class="pet-info">
+                        <h3 class="pet-name">Albie</h3>
+                        <p class="pet-description">A gentle and calm cat who loves quiet corners and warm laps.</p>
+                        <p class="pet-details">Age: Approximately 2 year old</p>
+                        <p class="pet-details">Breed: Aspin</p>
+
+                        <a href="adoption_form.html?pet=Albie">
+                            <button class="adopt-btn">ADOPT</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cat 2 -->
+                <div class="pet-card">
+                    <img src="img/cat.png" alt="Coco" class="pet-image">
+                    <div class="pet-info">
+                        <h3 class="pet-name">Coco</h3>
+                        <p class="pet-description">A sweet and affectionate cat who loves cuddles and cozy naps.</p>
+                        <p class="pet-details">Age: Approximately 2 year old</p>
+                        <p class="pet-details">Breed: Aspin</p>
+
+                        <a href="adoption_form.html?pet=Coco">
+                            <button class="adopt-btn">ADOPT</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cat 3 -->
+                <div class="pet-card">
+                    <img src="img/cat.png" alt="Bella" class="pet-image">
+                    <div class="pet-info">
+                        <h3 class="pet-name">Bella</h3>
+                        <p class="pet-description">An active cat who enjoys toys and greeting new friends.</p>
+                        <p class="pet-details">Age: Approximately 2 year old</p>
+                        <p class="pet-details">Breed: Aspin</p>
+
+                        <a href="adoption_form.html?pet=Bella">
+                            <button class="adopt-btn">ADOPT</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cat 4 -->
+                <div class="pet-card">
+                    <img src="img/cat.png" alt="Luna" class="pet-image">
+                    <div class="pet-info">
+                        <h3 class="pet-name">Luna</h3>
+                        <p class="pet-description">A curious cat who likes watching birds by the window.</p>
+                        <p class="pet-details">Age: Approximately 2 year old</p>
+                        <p class="pet-details">Breed: Aspin</p>
+
+                        <a href="adoption_form.html?pet=Luna">
+                            <button class="adopt-btn">ADOPT</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="arrow-btn" onclick="scrollPets('cats', 'right')">›</button>
+        </div>
+    </div>
+
+    <!-- Dogs Section -->
+    <div class="category-section">
+        <h2 class="category-header">Dogs Ready for Adoption</h2>
+        <div class="pets-carousel-wrapper">
+            <button class="arrow-btn" onclick="scrollPets('dogs', 'left')">‹</button>
+            <div class="pets-container" id="dogs-container">
+
+                <!-- Dog 1 -->
+                <div class="pet-card">
+                    <img src="img/dog.png" alt="Max" class="pet-image">
+                    <div class="pet-info">
+                        <h3 class="pet-name">Max</h3>
+                        <p class="pet-description">A gentle and calm dog who loves quiet corners and warm laps.</p>
+                        <p class="pet-details">Age: Approximately 3 year old</p>
+                        <p class="pet-details">Breed: Aspin</p>
+
+                        <a href="adoption_form.html?pet=Max">
+                            <button class="adopt-btn">ADOPT</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dog 2 -->
+                <div class="pet-card">
+                    <img src="img/dog.png" alt="Rocky" class="pet-image">
+                    <div class="pet-info">
+                        <h3 class="pet-name">Rocky</h3>
+                        <p class="pet-description">A sweet and affectionate dog who loves cuddles and cozy naps.</p>
+                        <p class="pet-details">Age: Approximately 4 year old</p>
+                        <p class="pet-details">Breed: Aspin</p>
+
+                        <a href="adoption_form.html?pet=Rocky">
+                            <button class="adopt-btn">ADOPT</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dog 3 -->
+                <div class="pet-card">
+                    <img src="img/dog.png" alt="Buddy" class="pet-image">
+                    <div class="pet-info">
+                        <h3 class="pet-name">Buddy</h3>
+                        <p class="pet-description">An active dog who enjoys toys and greeting new friends.</p>
+                        <p class="pet-details">Age: Approximately 2 year old</p>
+                        <p class="pet-details">Breed: Aspin</p>
+
+                        <a href="adoption_form.html?pet=Buddy">
+                            <button class="adopt-btn">ADOPT</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dog 4 -->
+                <div class="pet-card">
+                    <img src="img/dog.png" alt="Charlie" class="pet-image">
+                    <div class="pet-info">
+                        <h3 class="pet-name">Charlie</h3>
+                        <p class="pet-description">A curious dog who likes watching birds by the window.</p>
+                        <p class="pet-details">Age: Approximately 3 year old</p>
+                        <p class="pet-details">Breed: Aspin</p>
+
+                        <a href="adoption_form.html?pet=Charlie">
+                            <button class="adopt-btn">ADOPT</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="arrow-btn" onclick="scrollPets('dogs', 'right')">›</button>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="fade-in">
+    <div style="padding:40px 20px;">
+        <h2>Furfinds</h2>
+        <p>Your trusted partner in pet adoption.</p>
+
+        <div class="social-wrapper">
+            <a href="#"><img src="img/fb.png" alt="Facebook" class="social-icon-img"></a>
+            <a href="#"><img src="img/ig.png" alt="Instagram" class="social-icon-img"></a>
+            <a href="#"><img src="img/x.png" alt="Twitter" class="social-icon-img"></a>
+            <a href="#"><img src="img/tt.png" alt="TikTok" class="social-icon-img"></a>
+        </div>
+
+        <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">⬆ BACK TO TOP</button>
+    </div>
+
+    <div class="copyright-bar">
+        © 2025 Fur Finds. All rights reserved.
+    </div>
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+// Scroll Animation Observer
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe all animated elements
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+    animatedElements.forEach(el => observer.observe(el));
+
+    // Navbar scroll effect - only on screens wider than 768px
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth > 768) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Also check on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 768) {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Handle dropdown toggle on mobile
+    const dropdown = document.querySelector('.dropdown');
+    const dropbtn = document.querySelector('.dropbtn');
+    
+    if (dropbtn) {
+        dropbtn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event from bubbling
+                dropdown.classList.toggle('active');
+            }
+        });
+    }
+
+    // Close dropdown when clicking on dropdown links
+    const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 767) {
+                dropdown.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
+    const dropdown = document.querySelector('.dropdown');
+    
+    // Close menu if clicking outside navbar
+    if (!navbar.contains(e.target)) {
+        navLinks.classList.remove('active');
+        if (dropdown) {
+            dropdown.classList.remove('active');
+        }
+    }
+    // Close dropdown if clicking inside nav-links but outside dropdown
+    else if (navLinks.contains(e.target) && !dropdown.contains(e.target)) {
+        if (dropdown) {
+            dropdown.classList.remove('active');
+        }
+    }
+});
+
+function scrollPets(category, direction) {
+    const container = document.getElementById(category + '-container');
+    const scrollAmount = 300;
+    
+    if (direction === 'left') {
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}
+</script>
+
+</body>
+</html>

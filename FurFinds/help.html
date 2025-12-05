@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - FurFinds</title>
+    <link rel="stylesheet" href="help_style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="FurFinds Logo">
+        <h2>FURFINDS</h2>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pets.html">Pets</a>
+        <a href="adoption_form.html">Adopt</a>
+
+        <!-- Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Help</button>
+            <div class="dropdown-content">
+                <a href="help.html#contact-section">Contact</a>
+                <a href="help.html#faq-section">FAQs</a>
+            </div>
+        </div>
+         <a href="index.html#AboutUs">About Us</a>
+    </nav>
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero-help">
+    <div class="hero-help-content">
+        <h1>How Can We Help You</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Write your search here">
+            <button type="button">🔍</button>
+        </div>
+    </div>
+</section>
+
+<div class="main-content">
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq-section">
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">1. How does the adoption process work?</div>
+                <div class="faq-answer">A quick walkthrough of applying, meeting the pet, approval, and bringing them home.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">2. What are the requirements to adopt a pet?</div>
+                <div class="faq-answer">Basic age requirement, ID, home check (if any), and agreement to care standards.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">3. How much is the adoption fee?</div>
+                <div class="faq-answer">A simple breakdown of fees and what they usually cover, like vaccines or spaying/neutering.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">4. Are the pets vaccinated and checked by a vet?</div>
+                <div class="faq-answer">Information about health checks, vaccinations, and medical records.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">5. Can I adopt if I have other pets at home?</div>
+                <div class="faq-answer">Guidance on introducing pets to each other and any compatibility notes.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">6. Can we return the pet if it doesn't work out?</div>
+                <div class="faq-answer">Your return policy or steps for rehoming through the shelter.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">7. How long does the approval process take?</div>
+                <div class="faq-answer">Give an estimated time so adopters know what to expect.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">8. Do you allow reservations for pets?</div>
+                <div class="faq-answer">Explain if you accept holds or if it's first-come-first-served.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">9. Can I foster instead of adopting?</div>
+                <div class="faq-answer">Short info about fostering and how to apply if they're not ready for full adoption.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">10. What should I prepare before bringing my new pet home?</div>
+                <div class="faq-answer">Starter tips like food, crates, litter, toys, and a calm space to settle in.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">11. Do you offer support after adoption?</div>
+                <div class="faq-answer">Mention if you provide check-ins, advice, or training tips.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">12. What if the pet has special needs?</div>
+                <div class="faq-answer">Guidance for adopting seniors or pets with medical or behavioral needs.</div>
+            </div>
+        </div>
+
+        <div class="faq-intro">
+            <h2>Frequently Asked Questions</h2>
+            <p>This section gives quick answers to the most common questions about adoption, requirements, fees, and our services. It's here to help visitors find what they need without having to contact support.</p>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-section" id="contact-section">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <div class="contact-item">
+                <span>📱</span>
+                <div>
+                    <strong>Phone:</strong> 091 2345 6789
+                </div>
+            </div>
+            <div class="contact-item">
+                <span>✉️</span>
+                <div>
+                    <strong>Email:</strong> petadoption@gmail.com
+                </div>
+            </div>
+            <div class="contact-item">
+                <span>📍</span>
+                <div>
+                    <strong>Address:</strong> Biringan City
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <div id="alertMessage" class="alert"></div>
+            <form id="contactForm" method="POST" action="send_message.php">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Your Phone">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" maxlength="2000" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<footer class="fade-in">
+    <div style="padding:40px 20px;">
+        <h2>Furfinds</h2>
+        <p>Your trusted partner in pet adoption.</p>
+
+        <div class="social-wrapper">
+            <a href="#"><img src="img/fb.png" alt="Facebook" class="social-icon-img"></a>
+            <a href="#"><img src="img/ig.png" alt="Instagram" class="social-icon-img"></a>
+            <a href="#"><img src="img/x.png" alt="Twitter" class="social-icon-img"></a>
+            <a href="#"><img src="img/tt.png" alt="TikTok" class="social-icon-img"></a>
+        </div>
+
+        <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">⬆ BACK TO TOP</button>
+    </div>
+
+    <div class="copyright-bar">
+        © 2025 Fur Finds. All rights reserved.
+    </div>
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+// Scroll Animation Observer
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe all animated elements
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+    animatedElements.forEach(el => observer.observe(el));
+
+    // Navbar scroll effect - only on screens wider than 768px
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth > 768) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Also check on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 768) {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Handle dropdown toggle on mobile
+    const dropdown = document.querySelector('.dropdown');
+    const dropbtn = document.querySelector('.dropbtn');
+    
+    if (dropbtn) {
+        dropbtn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event from bubbling
+                dropdown.classList.toggle('active');
+            }
+        });
+    }
+
+    // Close dropdown when clicking on dropdown links
+    const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 767) {
+                dropdown.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
+    const dropdown = document.querySelector('.dropdown');
+    
+    // Close menu if clicking outside navbar
+    if (!navbar.contains(e.target)) {
+        navLinks.classList.remove('active');
+        if (dropdown) {
+            dropdown.classList.remove('active');
+        }
+    }
+    // Close dropdown if clicking inside nav-links but outside dropdown
+    else if (navLinks.contains(e.target) && !dropdown.contains(e.target)) {
+        if (dropdown) {
+            dropdown.classList.remove('active');
+        }
+    }
+});
+
+// FAQ Search Functionality
+const searchInput = document.querySelector('.search-bar input');
+const searchButton = document.querySelector('.search-bar button');
+const faqItems = document.querySelectorAll('.faq-item');
+const faqSection = document.querySelector('.faq-section');
+
+// Create "no results" message
+const noResultsMsg = document.createElement('div');
+noResultsMsg.className = 'no-results';
+noResultsMsg.textContent = '';
+document.querySelector('.faq-list').appendChild(noResultsMsg);
+
+// Search function
+function searchFAQs() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    let foundResults = false;
+
+    if (searchTerm === '') {
+        // Show all FAQs if search is empty
+        faqItems.forEach(item => {
+            item.classList.remove('hidden', 'highlight');
+        });
+        noResultsMsg.classList.remove('show');
+        return;
+    }
+
+    // Scroll to FAQ section
+    faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Filter FAQs
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question').textContent.toLowerCase();
+        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+            item.classList.remove('hidden');
+            item.classList.add('highlight');
+            foundResults = true;
+
+            // Remove highlight after animation
+            setTimeout(() => {
+                item.classList.remove('highlight');
+            }, 2000);
+        } else {
+            item.classList.add('hidden');
+            item.classList.remove('highlight');
+        }
+    });
+
+    // Show/hide "no results" message
+    if (!foundResults) {
+        noResultsMsg.classList.add('show');
+    } else {
+        noResultsMsg.classList.remove('show');
+    }
+}
+
+// Trigger search on button click
+searchButton.addEventListener('click', searchFAQs);
+
+// Trigger search on Enter key
+searchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        searchFAQs();
+    }
+});
+
+// Real-time search as user types (optional)
+searchInput.addEventListener('input', function() {
+    if (searchInput.value.length > 2) {
+        searchFAQs();
+    } else if (searchInput.value.length === 0) {
+        // Reset when cleared
+        faqItems.forEach(item => {
+            item.classList.remove('hidden', 'highlight');
+        });
+        noResultsMsg.classList.remove('show');
+    }
+});
+
+// Handle form submission with AJAX
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const alertBox = document.getElementById('alertMessage');
+    
+    fetch('send_message.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alertBox.className = 'alert show ' + (data.success ? 'success' : 'error');
+        alertBox.textContent = data.message;
+        
+        if(data.success) {
+            document.getElementById('contactForm').reset();
+        }
+        
+        // Hide alert after 5 seconds
+        setTimeout(() => {
+            alertBox.classList.remove('show');
+        }, 5000);
+    })
+    .catch(error => {
+        alertBox.className = 'alert show error';
+        alertBox.textContent = 'Something went wrong. Please try again.';
+        
+        setTimeout(() => {
+            alertBox.classList.remove('show');
+        }, 5000);
+    });
+});
+</script>
+
+</body>
+</html>

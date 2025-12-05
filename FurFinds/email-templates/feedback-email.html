@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            background: linear-gradient(135deg, #F47A21, #ff8f3a);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .content h2 {
+            color: #F47A21;
+        }
+        .feedback-box {
+            background-color: #FFF5E8;
+            border-left: 4px solid #F47A21;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .meta-info {
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐾 FurFinds Feedback</h1>
+        </div>
+        <div class="content">
+            <h2>New Feedback Received</h2>
+            <p>You have received new feedback from a user on the FurFinds website.</p>
+            
+            <div class="feedback-box">
+                <strong>Feedback Message:</strong><br><br>
+                {{FEEDBACK_MESSAGE}}
+            </div>
+            
+            <div class="meta-info">
+                <strong>Submission Details:</strong><br>
+                <strong>Date:</strong> {{SUBMISSION_DATE}}<br>
+                <strong>Time:</strong> {{SUBMISSION_TIME}}<br>
+                <strong>User Consents:</strong><br>
+                ✓ User agreed to feedback usage for service improvement<br>
+                ✓ User acknowledged feedback confidentiality
+            </div>
+        </div>
+        <div class="footer">
+            <p>This is an automated message from the FurFinds feedback system.</p>
+            <p>&copy; {{CURRENT_YEAR}} FurFinds. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

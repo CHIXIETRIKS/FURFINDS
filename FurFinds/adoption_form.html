@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurFinds</title>
+
+    <link rel="stylesheet" href="styless.css">
+</head>
+
+<body>
+<header class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="FurFinds Logo">
+        <h2>FURFINDS</h2>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pets.html">Pets</a>
+        <a href="adoption_form.html">Adopt</a>
+
+        <!-- Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Help</button>
+            <div class="dropdown-content">
+                <a href="help.html#contact-section">Contact</a>
+                <a href="help.html#faq-section">FAQs</a>
+            </div>
+        </div>
+        <a href="index.html#AboutUs">About Us</a>
+    </nav>
+</header>
+
+   <div class="container">
+        <h1 style="text-align: left;">Pet Adoption Process & Guidelines</h1>
+        
+        <p class="intro">
+            Adopting a pet is a deeply rewarding, lifelong commitment. Our goal is to connect wonderful animals 
+            with loving, responsible homes. We have a screening process in place to ensure the best possible 
+            match for both the pet and the adopter.
+        </p>
+
+        <h2>Requirements for Pet Adopters</h2>
+        <ul>
+            <li>Be 18 years or older with valid photo ID.</li>
+            <li>Provide current proof of residence.</li>
+            <li>If renting, provide written permission from your landlord allowing pets.</li>
+            <li>Demonstrate a stable living situation and the financial ability to cover lifelong vet care and needs.</li>
+        </ul>
+
+        <h2>Adoption Process</h2>
+        <ul>
+            <li>Submit a detailed application form online or in person.</li>
+            <li>Our team will review your application and conduct an interview (phone/video/in-person).</li>
+            <li>Interact with the pet at our facility. A home visit or photos of your home may be required.</li>
+            <li>Sign the adoption contract, pay the non-refundable fee, and take your pet home.</li>
+        </ul>
+
+        <h2>Post-Adoption Responsibilities</h2>
+        <p class="responsibilities-intro">By adopting a pet, you agree to:</p>
+        <ul>
+            <li>Ensure adequate food, shelter, water, and exercise.</li>
+            <li>Provide necessary annual vaccinations and medical attention.</li>
+            <li>Follow terms regarding spay/neuter, microchipping, and restrictions on declawing or rehoming without our consent.</li>
+            <li>If you can no longer care for the pet, you must return the animal to us.</li>
+        </ul>
+    </div>
+
+<form id="regForm" class="form-container" action="process.php" method="POST" enctype="multipart/form-data">
+
+    <input type="hidden" id="pet_name" name="pet_name">
+
+    <h1>Adoption Application Form</h1>
+
+    <h2>Applicant's Info</h2>
+
+    <div class="form-grid">
+    <input type="text" name="first_name" placeholder="First Name" required>
+    <input type="text" name="last_name" placeholder="Last Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="text" name="address" class="full" placeholder="Address" required>
+    <input type="date" name="birthdate" placeholder="Birth Date" required>
+    <input type="text" name="occupation" placeholder="Occupation" required>
+    <input type="text" name="company" placeholder="Company/Business Name (Type NA if unemployed)" required>
+    <input type="text" name="social" placeholder="Social Media Profile (FB/Twitter/IG Link)" required>
+</div>
+
+    <h2>Pet Experience/Additional Info</h2>
+
+    <div class="experience-grid">
+        <div>
+            <label class="question-label">What type of building do you live in?*</label>
+            <div class="building-options">
+                <label><input type="radio" name="building" value="house"> House</label>
+                <label><input type="radio" name="building" value="apartment"> Apartment</label>
+                <label><input type="radio" name="building" value="condo"> Condo</label>
+                <label><input type="radio" name="building" value="other"> Other</label>
+            </div>
+        </div>
+
+        <div>
+            <label class="question-label">Do you rent?*</label>
+            <div class="rent-options">
+                <label><input type="radio" name="rent" value="yes"> Yes</label>
+                <label><input type="radio" name="rent" value="no"> No</label>
+            </div>
+        </div>
+    </div>
+
+    <label class="sub-label">Who do you live with?*</label>
+    <div class="checkbox-grid">
+        <label><input type="checkbox" name="livewith[]" value="alone"> Living alone</label>
+        <label><input type="checkbox" name="livewith[]" value="spouse"> Spouse</label>
+        <label><input type="checkbox" name="livewith[]" value="parents"> Parents</label>
+        <label><input type="checkbox" name="livewith[]" value="children_over"> Children over 18</label>
+        <label><input type="checkbox" name="livewith[]" value="children_below"> Children below 18</label>
+        <label><input type="checkbox" name="livewith[]" value="relatives"> Relatives</label>
+        <label><input type="checkbox" name="livewith[]" value="roommates"> Roommate(s)</label>
+    </div>
+
+    <textarea name="experience" maxlength="2000" placeholder="Describe your experience on having a pet" required></textarea>
+
+    <div class="photo-section">
+        <p class="photo-instructions">Please attach photos of your home. This has replaced our on-site ocular inspections.</p>
+        <ol class="photo-list">
+            <li>Front of the house</li>
+            <li>Street photo</li>
+            <li>Living room</li>
+            <li>Dining area</li>
+            <li>Kitchen</li>
+            <li>Bedroom/s (if your pet will have access)</li>
+            <li>Windows (if adopting a cat)</li>
+            <li>Front & backyard (if adopting a dog)</li>
+        </ol>
+        <p class="privacy-note">
+            We value your privacy. Your photos will not be used for purposes other than this adoption application.
+        </p>
+
+        <!-- NEW STRUCTURE: TOP STATIC AREA + SCROLLABLE FILE LIST -->
+        <div class="upload-box" id="uploadBox">
+            <div class="upload-header">
+                <div class="upload-text">Drop files here or</div>
+                <button type="button" class="select-files-btn"
+                    onclick="document.getElementById('homePhotos').click()">Select files</button>
+                <input type="file" id="homePhotos" name="home_photos[]" accept="image/*" multiple style="display:none;">
+            </div>
+
+            <!-- Scrollable list -->
+            <div id="fileList" class="file-list"></div>
+        </div>
+    </div>
+
+    <div class="id-section">
+        <label class="id-label">Upload a valid ID*</label>
+        <input type="file" name="valid_id" class="file-input" accept="image/*,.pdf" required>
+    </div>
+
+    <div class="interview-section">
+        <h3 class="interview-title">Interview & Visitation (Minors must be accompanied by a parent or guardian)</h3>
+
+        <div class="interview-grid">
+            <div>
+                <label>Preferred date for Zoom interview*</label>
+                <input type="date" name="interview_date" required>
+            </div>
+
+            <div>
+                <label>Preferred time for Zoom interview*</label>
+                <div class="time-inputs">
+                    <select name="time_hour" required>
+                        <option value="">HH</option>
+                        <option>01</option><option>02</option><option>03</option>
+                        <option>04</option><option>05</option><option>06</option>
+                        <option>07</option><option>08</option><option>09</option>
+                        <option>10</option><option>11</option><option>12</option>
+                    </select>
+
+                    <span>:</span>
+
+                    <select name="time_minute" required>
+                        <option value="">MM</option>
+                        <option>00</option><option>15</option><option>30</option><option>45</option>
+                    </select>
+
+                    <span>:</span>
+
+                    <select name="time_ampm" required>
+                        <option>AM</option>
+                        <option>PM</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="visit-question">
+            <label>Will you be able to visit the shelter for the meet-and-greet?*</label>
+            <div>
+                <label><input type="radio" name="visit" value="yes" required> Yes</label>
+                <label><input type="radio" name="visit" value="no"> No</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="agreement-section">
+        <label>
+            <input type="checkbox" name="agreement" required>
+            I understand that submitting this application does not guarantee adoption, and that Fur Finds reserves the
+            right to refuse an adoption if it's determined not to be in the best interest of the animal. I certify that all
+            information provided is accurate and complete.*
+        </label>
+    </div>
+
+    <div class="submit-section">
+        <button type="submit" class="submit-btn">Submit Application</button>
+    </div>
+
+</form>
+
+<div id="formMessage" class="form-message"></div>
+
+
+<footer>
+  <div style="padding:40px 20px;">
+    <h2>Furfinds</h2>
+    <p>Your trusted partner in pet adoption.</p>
+
+    <div class="social-wrapper">
+      <a href="#"><img src="img/fb.png" alt="social" class="social-icon-img"></a>
+      <a href="#"><img src="img/ig.png" alt="social" class="social-icon-img"></a>
+      <a href="#"><img src="img/x.png" alt="social" class="social-icon-img"></a>
+      <a href="#"><img src="img/tt.png" alt="social" class="social-icon-img"></a>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">⬆ BACK TO TOP</button>
+  </div>
+
+  <div class="copyright-bar">
+    © 2025 Fur Finds. All rights reserved.
+  </div>
+</footer>
+
+
+<script>
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Navbar scroll effect - only on screens wider than 768px
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth > 768) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Also check on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 768) {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Handle dropdown toggle on mobile
+    const dropdown = document.querySelector('.dropdown');
+    const dropbtn = document.querySelector('.dropbtn');
+    
+    if (dropbtn) {
+        dropbtn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            }
+        });
+    }
+
+    // Close dropdown when clicking on dropdown links
+    const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 767) {
+                dropdown.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
+    const dropdown = document.querySelector('.dropdown');
+    
+    // Close menu if clicking outside navbar
+    if (!navbar.contains(e.target)) {
+        navLinks.classList.remove('active');
+        if (dropdown) {
+            dropdown.classList.remove('active');
+        }
+    }
+    // Close dropdown if clicking inside nav-links but outside dropdown
+    else if (navLinks.contains(e.target) && !dropdown.contains(e.target)) {
+        if (dropdown) {
+            dropdown.classList.remove('active');
+        }
+    }
+});
+
+// === EXISTING FORM SCRIPTS BELOW ===
+
+let uploadBox = document.getElementById('uploadBox');
+let fileInput = document.getElementById('homePhotos');
+let fileList = document.getElementById('fileList');
+let selectedFiles = [];
+
+// Prevent default drag behavior
+['dragenter','dragover','dragleave','drop'].forEach(eventName => {
+    uploadBox.addEventListener(eventName, e => {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+});
+
+// Highlight box
+['dragenter','dragover'].forEach(e =>
+    uploadBox.addEventListener(e, () => uploadBox.classList.add('dragover'))
+);
+['dragleave','drop'].forEach(e =>
+    uploadBox.addEventListener(e, () => uploadBox.classList.remove('dragover'))
+);
+
+// On dropped files
+uploadBox.addEventListener('drop', e => {
+    addFiles(e.dataTransfer.files);
+});
+
+// On selected files
+fileInput.addEventListener('change', e => {
+    addFiles(e.target.files);
+});
+
+function addFiles(files) {
+    selectedFiles = [...selectedFiles, ...files];
+    updateFileList();
+    updateFileInput();
+}
+
+function removeFile(index) {
+    selectedFiles.splice(index, 1);
+    updateFileList();
+    updateFileInput();
+}
+
+function updateFileList() {
+    fileList.innerHTML = "";
+    selectedFiles.forEach((file, index) => {
+        let item = document.createElement("div");
+        item.className = "file-item";
+        item.innerHTML = `
+            <span>${file.name}</span>
+            <button type="button" onclick="removeFile(${index})">🗑️</button>
+        `;
+        fileList.appendChild(item);
+    });
+}
+
+function updateFileInput() {
+    let dt = new DataTransfer();
+    selectedFiles.forEach(f => dt.items.add(f));
+    fileInput.files = dt.files;
+}
+
+// FORM SUBMIT
+document.getElementById("regForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (selectedFiles.length === 0) {
+        alert("Please upload at least one home photo.");
+        return;
+    }
+
+    fetch("process.php", {
+        method: "POST",
+        body: new FormData(this)
+    })
+    .then(res => res.text())
+    .then(response => {
+        const msg = document.getElementById("formMessage");
+
+        if (response.trim() === "success") {
+            msg.textContent = "Application Successful!";
+            msg.className = "form-message ok";
+
+            // RESET FORM
+            this.reset();
+
+            // RESET UPLOADER
+            selectedFiles = [];
+            fileList.innerHTML = "";
+            fileInput.value = "";
+
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                msg.textContent = "";
+                msg.className = "form-message";
+            }, 5000);
+
+        } else {
+            msg.textContent = "Something went wrong. Please try again.";
+            msg.className = "form-message err";
+        }
+    });
+});
+
+// AUTO-SET PET NAME
+const pet = new URLSearchParams(window.location.search).get("pet");
+if (pet) document.getElementById("pet_name").value = pet;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FurFinds</title>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="FurFinds Logo">
+        <h2>FURFINDS</h2>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pets.html">Pets</a>
+        <a href="adoption_form.html">Adopt</a>
+
+        <!-- Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Help</button>
+            <div class="dropdown-content">
+                <a href="help.html#contact-section">Contact</a>
+                <a href="help.html#faq-section">FAQs</a>
+            </div>
+        </div>
+         <a href="index.html#AboutUs">About Us</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Helping Paws<br>Find Loving Homes</h1>
+        <p>
+            We connect rescued pets with people who are ready to give them a safe and caring home.
+            Our goal is to make the adoption process simple, supportive, and welcoming so every
+            animal gets the second chance they deserve.
+        </p>
+       <a href="pets.html"> <button class="cta">Adopt a Pet Now</button> </a>
+    </div>
+
+    <div class="hero-img">
+        <img src="img/img1.png" alt="Cute Dog">
+    </div>
+</section>
+
+<section class="AboutUs" id="AboutUs">
+    <div class="mission-container fade-in">
+        <div class="mission-img">
+            <img src="img/img2.png" alt="Cute Cat">
+        </div>
+        <div class="mission-text">
+            <h2>Our Mission</h2>
+            <p>Our mission is to give every rescued pet the opportunity to grow, heal, and thrive in a safe and loving home. We focus on compassionate care, responsible adoption, and building trust with both animals and future owners. From rescue to rehabilitation to matching each pet with the right family, we're committed to guiding people through the entire journey. By bringing pets and people together, we hope to create lasting bonds that make life better for everyone involved.</p>
+        </div>
+    </div>
+
+    <div class="adopt-container fade-in">
+        <div class="adopt-text">
+            <h2>Adopt A Pet</h2>
+            <p>Adopting a pet gives an animal a second chance at a safe and happy life. Many dogs, cats, and other animals in shelters came from tough situations, and adoption gives them the chance to feel cared for again. It also helps reduce overcrowding in shelters so more animals can be rescued. There are plenty of benefits for people too. Pets offer companionship, lower stress, and create a sense of routine and purpose. They make homes feel more alive and give you a loyal friend who's always there to greet you.</p>
+        </div>
+        <div class="adopt-img">
+            <img src="img/img3.png" alt="Cute Cat">
+        </div>
+    </div>
+</section>
+
+<section class="pets-to-adopt">
+    <h2 class="fade-in">Pets You can Adopt</h2>
+    <div class="pets-cont">
+        <div class="cats-cont scale-in">
+            <img src="img/img4.png" alt="Cat">
+            <h3>Cats</h3>
+            <p>Independent, gentle pets who offer comfort, warmth, and quiet companionship.</p>
+        </div>
+        <div class="dogs-cont scale-in">
+            <img src="img/img1.png" alt="Dog">
+            <h3>Dogs</h3>
+            <p>Friendly, loyal companions who bring energy and affection into any home.</p>
+        </div>
+    </div>
+    <div class="fade-in">
+        <a href="pets.html"><button class="cta1">See Pets Ready for Adoption</button></a>
+    </div>
+</section>
+
+<section class="feedback-section" id="feedback-section">
+    <div class="feedback-container fade-in">
+        <h1 class="feedback-title">We'd Love to Hear From You!</h1>
+        <p class="feedback-subtitle">Let us know your feedback:</p>
+
+        <div id="feedback-alert" class="alert-message"></div>
+
+        <form class="feedback-form" action="feedback_process.php" method="POST" enctype="multipart/form-data">
+            <textarea 
+                class="form-textarea" 
+                name="fb-message"
+                placeholder="Write your feedback here..."
+                maxlength="2000"
+                required
+            ></textarea>
+            
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="consent1" name="consent1" value="1" required>
+                    <label for="consent1">I agree that my feedback may be used to improve the services. *</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="consent2" name="consent2" value="1" required>
+                    <label for="consent2">I understand that my feedback will remain confidential. *</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+    </div>
+</section>
+
+<footer class="fade-in">
+    <div style="padding:40px 20px;">
+        <h2>Furfinds</h2>
+        <p>Your trusted partner in pet adoption.</p>
+
+        <div class="social-wrapper">
+            <a href="#"><img src="img/fb.png" alt="Facebook" class="social-icon-img"></a>
+            <a href="#"><img src="img/ig.png" alt="Instagram" class="social-icon-img"></a>
+            <a href="#"><img src="img/x.png" alt="Twitter" class="social-icon-img"></a>
+            <a href="#"><img src="img/tt.png" alt="TikTok" class="social-icon-img"></a>
+        </div>
+
+        <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">⬆ BACK TO TOP</button>
+    </div>
+
+    <div class="copyright-bar">
+        © 2025 Fur Finds. All rights reserved.
+    </div>
+</footer>
+
+<script>
+
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+    // Scroll Animation Observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+        animatedElements.forEach(el => observer.observe(el));
+
+        // Navbar scroll effect - only on screens wider than 768px
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth > 768) {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Also check on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768) {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Handle dropdown toggle on mobile
+        const dropdown = document.querySelector('.dropdown');
+        const dropbtn = document.querySelector('.dropbtn');
+        
+        if (dropbtn) {
+            dropbtn.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation(); // Prevent event from bubbling
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+
+        // Close dropdown when clicking on dropdown links
+        const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 767) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const navLinks = document.querySelector('.nav-links');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+        const dropdown = document.querySelector('.dropdown');
+        
+        // Close menu if clicking outside navbar
+        if (!navbar.contains(e.target)) {
+            navLinks.classList.remove('active');
+            if (dropdown) {
+                dropdown.classList.remove('active');
+            }
+        }
+        // Close dropdown if clicking inside nav-links but outside dropdown
+        else if (navLinks.contains(e.target) && !dropdown.contains(e.target)) {
+            if (dropdown) {
+                dropdown.classList.remove('active');
+            }
+        }
+    });
+
+    // Alert Message
+
+    // Show success or error from PHP redirect
+    document.addEventListener("DOMContentLoaded", () => {
+    const alertBox = document.getElementById("feedback-alert");
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get("status");
+
+    if (!status) return;
+
+    if (status === "success") {
+        alertBox.textContent = "Thank you for your feedback!";
+        alertBox.className = "alert-message alert-success";
+    } else {
+        alertBox.textContent = "Something went wrong. Please try again.";
+        alertBox.className = "alert-message alert-error";
+    }
+
+    alertBox.style.display = "block";
+
+    // Remove ?status=... from the URL so reload won't show the alert again
+    window.history.replaceState({}, document.title, window.location.pathname + "#feedback-section");
+
+    // AUTO HIDE AFTER 5 SECONDS (correct placement)
+    setTimeout(() => {
+        alertBox.style.opacity = "0";
+        alertBox.style.transition = "opacity 0.5s ease";
+
+        setTimeout(() => {
+            alertBox.style.display = "none";
+        }, 500);
+    }, 5000);
+});
+
+</script>
+
+</body>
+</html>
